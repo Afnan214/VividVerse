@@ -2,14 +2,20 @@ set(HEADER_FILES
 	Utilities.h
 	include/VividVerse.h
 	VividVerseApp.h
+	GameWindow.h
+	WindowImplementation.h
+	GLFWCode/GLFWImplementation.h
 )
 set(SOURCE_FILES 
-	placeholder.cpp 
+	GameWindow.cpp
+	GLFWCode/GLFWImplementation.cpp
+	
 )
 
 add_definitions(-DVV_DEBUG=2)
 add_definitions(-DVIVIDVERSE_LIB)
 
+include_directories(${PROJECT_SOURCE_DIR})
 include_directories(../glfw/include)
 
 add_library(VividVerse SHARED ${HEADER_FILES} ${SOURCE_FILES})
