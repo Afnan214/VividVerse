@@ -1,0 +1,23 @@
+set(HEADER_FILES 
+	Utilities.h
+	include/VividVerse.h
+	VividVerseApp.h
+)
+set(SOURCE_FILES 
+	placeholder.cpp 
+)
+
+add_definitions(-DVV_DEBUG=2)
+add_definitions(-DVIVIDVERSE_LIB)
+
+if(WIN32)
+	add_definitions(-DVIVIDVERSE_MSCPP)
+elseif(LINUX)
+	add_definitions(-DVIVIDVERSE_LINUX)
+elseif(APPLE)
+	add_definitions(-DVIVIDVERSE_APPLE)
+endif()
+
+add_library(VividVerse SHARED ${HEADER_FILES} ${SOURCE_FILES})
+
+target_precompile_headers(VividVerse PRIVATE pch.h)
