@@ -22,9 +22,14 @@ namespace vv
 	template<typename T>
 	void VividVerseApp<T>::Run()
 	{
+		mWindow.Create("Game AE", 1000, 800);
 		while (mShouldContinue) {
 			OnUpdate();
+
+			mWindow.SwapBuffers();
+			mWindow.PollEvents();
 		}
+
 	}
 	template<typename T>
 	void VividVerseApp<T>::OnUpdate()

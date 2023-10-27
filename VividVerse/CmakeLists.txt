@@ -10,14 +10,10 @@ set(SOURCE_FILES
 add_definitions(-DVV_DEBUG=2)
 add_definitions(-DVIVIDVERSE_LIB)
 
-if(WIN32)
-	add_definitions(-DVIVIDVERSE_MSCPP)
-elseif(LINUX)
-	add_definitions(-DVIVIDVERSE_LINUX)
-elseif(APPLE)
-	add_definitions(-DVIVIDVERSE_APPLE)
-endif()
+include_directories(../glfw/include)
 
 add_library(VividVerse SHARED ${HEADER_FILES} ${SOURCE_FILES})
 
 target_precompile_headers(VividVerse PRIVATE pch.h)
+
+target_link_libraries(VividVerse glfw)

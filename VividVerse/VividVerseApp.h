@@ -1,9 +1,9 @@
 #pragma once
 #include"Utilities.h"
-
+#include"GameWindow.h"
 namespace vv {
 	template<typename T>
-	class VIVIDVERSE_API VividVerseApp {
+	class  VividVerseApp {
 	public:
 
 		static void Init();
@@ -16,6 +16,7 @@ namespace vv {
 	private:
 		VividVerseApp();
 		inline static VividVerseApp* sInstance{ nullptr };
+		GameWindow mWindow;
 		bool mShouldContinue{ true };
 	};
 
