@@ -119,7 +119,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;%(AdditionalIncludeDirectories);$(SolutionDir)VividVerse;$(SolutionDir)VividVerse</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)VividVerse;$(SolutionDir)glfw\include;%(AdditionalIncludeDirectories);$(SolutionDir)VividVerse;$(SolutionDir)VividVerse</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +135,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);VIVIDVERSE_LIB;VIVIDVERSE_MSCPP</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)VividVerse;%(AdditionalIncludeDirectories);$(SolutionDir)VividVerse;$(SolutionDir)VividVerse</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)VividVerse;$(SolutionDir)VividVerse;%(AdditionalIncludeDirectories);$(SolutionDir)VividVerse;$(SolutionDir)VividVerse</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,26 +145,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Events.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="GLFWCode\GLFWImplementation.h" />
+    <ClInclude Include="GLFWCode\OpenGLPicture.h" />
+    <ClInclude Include="GLFWCode\OpenGLRenderer.h" />
+    <ClInclude Include="GLFWCode\OpenGLShader.h" />
+    <ClInclude Include="Keys.h" />
+    <ClInclude Include="Picture.h" />
+    <ClInclude Include="PictureImplementation.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererImplementation.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="include\VividVerse.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ShaderImplementation.h" />
+    <ClInclude Include="Unit.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="VividVerseApp.h" />
     <ClInclude Include="WindowImplementation.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="GLFWCode\GLFWImplementation.cpp" />
+    <ClCompile Include="GLFWCode\OpenGLPicture.cpp" />
+    <ClCompile Include="GLFWCode\OpenGLRenderer.cpp" />
+    <ClCompile Include="GLFWCode\OpenGLShader.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\glad\glad.vcxproj">
+      <Project>{6d87b289-8b80-41f6-b6f4-59499db4046d}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\glfw_proj\src\glfw.vcxproj">
       <Project>{16735931-c2fa-3315-a4c4-2f677e442229}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\stbi\stbi.vcxproj">
+      <Project>{04286f22-7e1a-4127-99da-a9b6d23cf6dc}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
