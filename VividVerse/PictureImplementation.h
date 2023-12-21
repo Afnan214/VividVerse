@@ -10,5 +10,6 @@ namespace vv {
 		virtual int GetHeight()const = 0;
 		virtual ~PictureImplementation() {};
 		virtual void operator=(const std::string& pictureFile) = 0;
+
 	};
 }

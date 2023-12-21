@@ -18,12 +18,18 @@ namespace vv {
 
 		void Run();
 		virtual void OnUpdate();
+		int getWidth();
+		int getHeight();
 
 		static void Draw(int x, int y, Picture& pic);
 		static void Draw(Unit& item);
 
+
+
 		void SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc);
 		void SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc);
+		void SetKeyRepeatedCallback(std::function<void(const KeyRepeated&)> callbackFunc);
+		void SetWindowPosCallback(std::function<void(int& xpos, int& ypos)> callbackFunc);
 		void SetWindowCloseCallback(std::function<void()> callbackFunc);
 
 		void DefaultWindowCloseHandler();

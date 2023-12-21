@@ -116,6 +116,8 @@ void vv::OpenGLPicture::operator=(const std::string& PictureFile)
 	stbi_image_free(data);
 }
 
+
+
 vv::OpenGLPicture::~OpenGLPicture()
 {
 	glDeleteTextures(1, &mTexture);

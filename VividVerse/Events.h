@@ -12,6 +12,17 @@ namespace vv
 		int mKeyCode;
 	};
 
+	class VIVIDVERSE_API KeyRepeated
+	{
+	public:
+		KeyRepeated(int kCode);
+
+		int GetKeyCode() const;
+	private:
+		int mKeyCode;
+	};
+
+
 	class VIVIDVERSE_API KeyReleased
 	{
 	public:

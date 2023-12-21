@@ -3,6 +3,7 @@
 
 
 namespace vv {
+
 	Unit::Unit(const std::string& image, int x, int y) :
 		mImage(image), mXPosition(x), mYPosition(y)
 	{
@@ -42,6 +43,7 @@ namespace vv {
 	{
 		mYPosition += amount;
 	}
+	
 	bool UnitsOverlap(const Unit& a, const Unit& b)
 	{
 		int left_a{ a.mXPosition };
@@ -60,4 +62,5 @@ namespace vv {
 		
 		return x_intersection and y_intersection;
 	}
+	
 }

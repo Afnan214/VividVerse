@@ -12,6 +12,7 @@ namespace vv {
 		int GetWidth() const;
 		int GetHeight() const;
 		void operator=(const std::string& PictureFile);
+
 	private:
 		std::unique_ptr<PictureImplementation> mImplementation;
 	};

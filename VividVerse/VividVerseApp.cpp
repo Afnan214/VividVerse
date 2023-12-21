@@ -14,7 +14,7 @@ namespace vv
 	template<typename T>
 	VividVerseApp<T>::VividVerseApp()
 	{
-		mWindow.Create("Game AE", 2000, 1000);
+		mWindow.Create("Game AE", 1400, 800);
 		mRenderer.Init();
 		SetWindowCloseCallback([this]() {DefaultWindowCloseHandler(); });
 	}
@@ -66,6 +66,19 @@ namespace vv
 	}
 
 	template<typename T>
+	int VividVerseApp<T>::getWidth()
+	{
+		return mWindow.GetWidth();
+		
+	}
+
+	template<typename T>
+	int VividVerseApp<T>::getHeight()
+	{
+		return mWindow.GetHeight();
+	}
+
+	template<typename T>
 	void VividVerseApp<T>::Draw(int x, int y, Picture& pic)
 	{
 		sInstance->mRenderer.Draw(x, y, pic);
@@ -84,6 +97,16 @@ namespace vv
 	void VividVerseApp<T>::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc)
 	{
 		mWindow.SetKeyReleasedCallback(callbackFunc);
+	}
+	template<typename T>
+	void VividVerseApp<T>::SetKeyRepeatedCallback(std::function<void(const KeyRepeated&)> callbackFunc)
+	{
+		mWindow.SetKeyRepeatedCallback(callbackFunc);
+	}
+	template<typename T>
+	void VividVerseApp<T>::SetWindowPosCallback(std::function<void(int& xpos, int& ypos)> callbackFunc)
+	{
+		mWindow.SetWindowPosCallback(callbackFunc);
 	}
 	template<typename T>
 	void VividVerseApp<T>::SetWindowCloseCallback(std::function<void()> callbackFunc)

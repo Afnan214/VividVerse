@@ -10,6 +10,7 @@ namespace vv {
 		virtual int GetWidth()const override;
 		virtual int GetHeight()const override;
 		virtual void operator=(const std::string& PictureFile) override;
+
 		~OpenGLPicture();
 	private:
 		unsigned int mTexture;

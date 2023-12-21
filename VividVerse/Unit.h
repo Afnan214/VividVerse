@@ -6,6 +6,7 @@ namespace vv {
 	class VIVIDVERSE_API Unit
 	{
 	public:
+		
 		Unit(const std::string& image, int x, int y);
 		Unit(std::string&& image, int x, int y);
 
@@ -16,6 +17,7 @@ namespace vv {
 		void SetCoords(int x, int y);
 		void UpdateXCoord(int amount);
 		void UpdateYCoord(int amount);
+		
 	private:
 		Picture mImage;
 		int mXPosition;

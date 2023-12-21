@@ -15,6 +15,10 @@ namespace vv
 
 		virtual void SetKeyPressedCallback(std::function<void(const KeyPressed&)>& callbackFunc)=0;
 		virtual void SetKeyReleasedCallback(std::function<void(const KeyReleased&)>& callbackFunc)=0;
+		virtual void SetKeyRepeatedCallback(std::function<void(const KeyRepeated&)>& callbackFunc) = 0;
+
+		virtual void SetWindowPosCallback(std::function<void(int& xpos, int& ypos)>& callbackFunc) = 0;
+
 		virtual void SetWindowCloseCallback(std::function<void()>& callbackFunc)=0;
 
 		virtual ~WindowImplementation() {};

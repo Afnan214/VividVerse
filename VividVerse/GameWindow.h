@@ -18,6 +18,8 @@ namespace vv
 
 		void SetKeyPressedCallback(std::function<void(const KeyPressed&)>& callbackFunc);
 		void SetKeyReleasedCallback(std::function<void(const KeyReleased&)>& callbackFunc);
+		void SetKeyRepeatedCallback(std::function<void(const KeyRepeated&)>& callbackFunc);
+		void SetWindowPosCallback(std::function<void(int& xpos, int& ypos)>& callbackFunc);
 		void SetWindowCloseCallback(std::function<void()>& callbackFunc);
 
 

@@ -48,6 +48,16 @@ namespace vv
 		mImplementation->SetKeyReleasedCallback(callbackFunc);
 	}
 
+	void GameWindow::SetKeyRepeatedCallback(std::function<void(const KeyRepeated&)>& callbackFunc)
+	{
+		mImplementation->SetKeyRepeatedCallback(callbackFunc);
+	}
+
+	void GameWindow::SetWindowPosCallback(std::function<void(int& xpos, int& ypos)>& callbackFunc)
+	{
+		mImplementation->SetWindowPosCallback(callbackFunc); 
+	}
+
 	void GameWindow::SetWindowCloseCallback(std::function<void()>& callbackFunc)
 	{
 		mImplementation->SetWindowCloseCallback(callbackFunc);

@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glad\glad.vcxproj">
@@ -158,6 +159,9 @@
     <ProjectReference Include="..\VividVerse\VividVerse.vcxproj">
       <Project>{d44d96e6-593c-41da-a599-538ee0164f16}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
